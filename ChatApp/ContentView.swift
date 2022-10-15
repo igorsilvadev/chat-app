@@ -6,14 +6,56 @@
 //
 
 import SwiftUI
+import _PhotosUI_SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ViewModel()
+    @State var mensagem = ""
+    @State private var selectedItem: PhotosPickerItem? = nil
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Spacer()
+            ForEach(viewModel.messages, id: \.id) { message in
+                if let msg = message.text {
+                    Text(msg)
+                }
+                if let image = message.image {
+                    Image(uiImage: UIImage(data: image)!)
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                }
+            }
+            Spacer()
+            HStack {
+                TextEditor(text: $mensagem)
+                    .frame(height: 45)
+                    .border(.black)
+                
+                PhotosPicker(
+                    selection: $selectedItem,
+                    matching: .images,
+                    photoLibrary: .shared()) {
+                        Image(systemName: "photo")
+                            .font(.largeTitle)
+                            .foregroundColor(.black)
+                    }
+                    .onChange(of: selectedItem) { newItem in
+                        Task {
+                            // Retrieve selected asset in the form of Data
+                            if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                viewModel.sendImage(image: data)
+                            }
+                        }
+                    }
+                Button {
+                    viewModel.sendMessage(text: mensagem)
+                    mensagem = ""
+                } label: {
+                    Image(systemName: "chevron.right.circle.fill")
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+                }
+            }
         }
         .padding()
     }

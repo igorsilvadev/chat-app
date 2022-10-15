@@ -11,6 +11,7 @@
 		2344AB7F28FA27D200719FC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344AB7E28FA27D200719FC1 /* ContentView.swift */; };
 		2344AB8128FA27D500719FC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2344AB8028FA27D500719FC1 /* Assets.xcassets */; };
 		2344AB8428FA27D500719FC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2344AB8328FA27D500719FC1 /* Preview Assets.xcassets */; };
+		2344AB8B28FA27E400719FC1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344AB8A28FA27E400719FC1 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		2344AB7E28FA27D200719FC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2344AB8028FA27D500719FC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2344AB8328FA27D500719FC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2344AB8A28FA27E400719FC1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				2344AB7E28FA27D200719FC1 /* ContentView.swift */,
 				2344AB8028FA27D500719FC1 /* Assets.xcassets */,
 				2344AB8228FA27D500719FC1 /* Preview Content */,
+				2344AB8A28FA27E400719FC1 /* ViewModel.swift */,
 			);
 			path = ChatApp;
 			sourceTree = "<group>";
@@ -83,6 +86,8 @@
 			dependencies = (
 			);
 			name = ChatApp;
+			packageProductDependencies = (
+			);
 			productName = ChatApp;
 			productReference = 2344AB7928FA27D200719FC1 /* ChatApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,8 @@
 				Base,
 			);
 			mainGroup = 2344AB7028FA27D200719FC1;
+			packageReferences = (
+			);
 			productRefGroup = 2344AB7A28FA27D200719FC1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2344AB7F28FA27D200719FC1 /* ContentView.swift in Sources */,
+				2344AB8B28FA27E400719FC1 /* ViewModel.swift in Sources */,
 				2344AB7D28FA27D200719FC1 /* ChatAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
