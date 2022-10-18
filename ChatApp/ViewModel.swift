@@ -56,7 +56,7 @@ class ViewModel: ObservableObject {
                 }
             })
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1 , execute: workItem)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.2 , execute: workItem)
     }
     
     func sendMessage(text: String) {
@@ -67,7 +67,7 @@ class ViewModel: ObservableObject {
             })
         }
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2.5, execute: workItem)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.2, execute: workItem)
     }
     
     func sendImage(image: Data) {
@@ -78,7 +78,7 @@ class ViewModel: ObservableObject {
             })
         }
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2.5, execute: workItem)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.2, execute: workItem)
     }
     
     func sendPing() {
