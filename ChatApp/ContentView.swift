@@ -15,14 +15,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Spacer()
-            ForEach(viewModel.messages, id: \.id) { message in
-                if let msg = message.text {
-                    Text(msg)
-                }
-                if let image = message.image {
-                    Image(uiImage: UIImage(data: image)!)
-                        .resizable()
-                        .frame(width: 100, height: 100)
+            ScrollView {
+                ForEach(viewModel.messages, id: \.id) { message in
+                    if let msg = message.text {
+                        Text(msg)
+                    }
+                    if let image = message.image {
+                        Image(uiImage: UIImage(data: image)!)
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                    }
                 }
             }
             Spacer()
@@ -56,6 +58,7 @@ struct ContentView: View {
                         .foregroundColor(.black)
                 }
             }
+            .ignoresSafeArea(.keyboard, edges: .bottom)
         }
         .padding()
     }
